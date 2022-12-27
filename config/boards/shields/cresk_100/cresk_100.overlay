@@ -1,0 +1,53 @@
+/*
+ * Copyright (c) 2022 The ZMK Contributors
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+#include "cresk_100.dtsi"
+
+/ {
+	kscan_matrix_1: kscan_matrix_1 {
+		compatible = "zmk,kscan-gpio-charlieplex";
+		label = "MATRIX_1";
+
+		gpios
+			= <&gpioa 5  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+			, <&gpioa 4  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+			, <&gpioa 3  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+			, <&gpioa 2  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+			, <&gpioa 1  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+			;
+	};
+
+	kscan_matrix_2: kscan_matrix_2 {
+		compatible = "zmk,kscan-gpio-charlieplex";
+		label = "MATRIX_2";
+
+		gpios
+			= <&gpiob 7  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+			, <&gpioa 0  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+			, <&gpioa 15 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+			, <&gpiob 3  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+			, <&gpiob 4  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+			;
+	};
+
+	left_encoder: encoder_left {
+		compatible = "alps,ec11";
+		label = "LEFT_ENCODER";
+		a-gpios = <&gpiob 1  (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+		b-gpios = <&gpiob 0  (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+		resolution = <3>;
+		status = "okay";
+	};
+
+	right_encoder: encoder_right {
+		compatible = "alps,ec11";
+		label = "RIGHT_ENCODER";
+		a-gpios = <&gpiob 6  (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+		b-gpios = <&gpiob 5  (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+		resolution = <3>;
+		status = "okay";
+	};
+};

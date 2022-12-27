@@ -1,0 +1,23 @@
+# Copyright (c) 2022 The ZMK Contributors
+# SPDX-License-Identifier: MIT
+
+if ZMK_DISPLAY
+
+config CUSTOM_WIDGET_LABEL
+	bool "Widget for displaying text"
+	select LVGL_USE_LABEL
+
+if CUSTOM_WIDGET_LABEL
+
+config CUSTOM_WIDGET_LABEL_TEXT
+	string "Label text"
+	default ZMK_KEYBOARD_NAME
+
+endif # CUSTOM_WIDGET_LABEL
+
+config CUSTOM_WIDGET_BONGO_CAT
+	bool "Widget for displaying bongo cat"
+	select LVGL_USE_LABEL
+	select LVGL_USE_IMG
+
+endif # ZMK_DISPLAY

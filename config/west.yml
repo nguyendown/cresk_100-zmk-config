@@ -1,0 +1,13 @@
+manifest:
+  remotes:
+    - name: zmkfirmware
+      url-base: https://github.com/zmkfirmware
+    - name: nguyendown
+      url-base: https://github.com/nguyendown
+  projects:
+    - name: zmk
+      remote: nguyendown
+      revision: cresk_100
+      import: app/west.yml
+  self:
+    path: config

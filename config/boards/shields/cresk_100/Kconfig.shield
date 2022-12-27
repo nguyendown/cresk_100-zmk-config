@@ -1,0 +1,8 @@
+# Copyright (c) 2022 The ZMK Contributors
+# SPDX-License-Identifier: MIT
+
+config SHIELD_CRESK_100
+	def_bool $(shields_list_contains,cresk_100)
+
+config SHIELD_CRESK_V2
+	def_bool $(shields_list_contains,cresk_v2)

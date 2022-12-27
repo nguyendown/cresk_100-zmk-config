@@ -1,0 +1,84 @@
+# Copyright (c) 2022 The ZMK Contributors
+# SPDX-License-Identifier: MIT
+
+if SHIELD_CRESK_100 || SHIELD_CRESK_V2
+
+config ZMK_KEYBOARD_NAME
+	default "cresk_100"
+
+config ZMK_USB
+	default y
+
+config ZMK_DISPLAY
+	select LVGL_USE_CONT
+	select LVGL_FONT_MONTSERRAT_26
+	select LVGL_FONT_MONTSERRAT_20
+	select LVGL_FONT_MONTSERRAT_16
+	select LVGL_USE_LABEL
+	select LVGL_USE_IMG
+
+choice ZMK_DISPLAY_STATUS_SCREEN
+	default ZMK_DISPLAY_STATUS_SCREEN_CUSTOM
+endchoice
+
+if ZMK_DISPLAY
+
+config I2C
+	default y
+
+config SSD1306
+	default y
+
+config SSD1306_REVERSE_MODE
+	default y
+
+config CUSTOM_WIDGET_LABEL
+	bool "Widget for displaying text"
+	select LVGL_USE_LABEL
+
+if CUSTOM_WIDGET_LABEL
+
+config CUSTOM_WIDGET_LABEL_TEXT
+	string "Label text"
+	default ZMK_KEYBOARD_NAME
+
+endif # CUSTOM_WIDGET_LABEL
+
+config CUSTOM_WIDGET_BONGO_CAT
+	bool "Widget for displaying bongo cat"
+	select LVGL_USE_LABEL
+	select LVGL_USE_IMG
+
+endif # ZMK_DISPLAY
+
+if LVGL
+
+config LVGL_VDB_SIZE
+	default 100
+
+config LVGL_DPI
+	default 148
+
+config LVGL_BITS_PER_PIXEL
+	default 1
+
+choice LVGL_COLOR_DEPTH
+	default LVGL_COLOR_DEPTH_1
+endchoice
+
+endif # LVGL
+
+if BUILD_OUTPUT_UF2
+
+config BUILD_OUTPUT_UF2_FAMILY_ID
+	default "0x57755a57"
+
+config BUILD_OUTPUT_UF2_USE_FLASH_BASE
+	default y
+
+config BUILD_OUTPUT_UF2_USE_FLASH_OFFSET
+	default y
+
+endif # BUILD_OUTPUT_UF2
+
+endif # SHIELD_CRESK_100 || SHIELD_CRESK_V2

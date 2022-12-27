@@ -1,0 +1,11 @@
+file_format: "1"
+id: cresk_100
+name: cresk_100
+type: shield
+url: https://github.com/nguyendown/cresk
+requires: [blackpill]
+exposes: [i2c_oled]
+features:
+  - keys
+  - display
+  - encoder
