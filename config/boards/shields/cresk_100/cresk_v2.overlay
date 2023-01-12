@@ -9,7 +9,6 @@
 / {
 	kscan_matrix_1: kscan_matrix_1 {
 		compatible = "zmk,kscan-gpio-charlieplex";
-		label = "MATRIX_1";
 
 		gpios
 			= <&gpioa 5  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
@@ -22,7 +21,6 @@
 
 	kscan_matrix_2: kscan_matrix_2 {
 		compatible = "zmk,kscan-gpio-charlieplex";
-		label = "MATRIX_2";
 
 		gpios
 			= <&gpiob 5  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>

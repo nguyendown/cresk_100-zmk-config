@@ -7,7 +7,7 @@
 #pragma once
 
 #include <lvgl.h>
-#include <kernel.h>
+#include <zephyr/kernel.h>
 
 struct zmk_widget_bongo_cat {
     sys_snode_t node;
