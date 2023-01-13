@@ -7,7 +7,7 @@ manifest:
   projects:
     - name: zmk
       remote: nguyendown
-      revision: cresk_100
+      revision: zephyr-3.2+shield-cmake+charlieplex+sk-fixes
       import: app/west.yml
   self:
     path: config
