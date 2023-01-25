@@ -7,7 +7,7 @@ manifest:
   projects:
     - name: zmk
       remote: nguyendown
-      revision: zephyr-3.2+shield-cmake+charlieplex+sk-fixes
+      revision: zephyr-3.2+shield-cmake+charlieplex+sk-fixes+mouse
       import: app/west.yml
   self:
     path: config
