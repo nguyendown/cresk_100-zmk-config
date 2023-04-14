@@ -55,7 +55,7 @@ endif # ZMK_DISPLAY_STATUS_SCREEN_CUSTOM
 
 config CUSTOM_WIDGET_LABEL
 	bool "Widget for displaying text"
-	select LVGL_USE_LABEL
+	select LV_USE_LABEL
 
 if CUSTOM_WIDGET_LABEL
 
@@ -67,8 +67,8 @@ endif # CUSTOM_WIDGET_LABEL
 
 config CUSTOM_WIDGET_BONGO_CAT
 	bool "Widget for displaying bongo cat"
-	select LVGL_USE_LABEL
-	select LVGL_USE_IMG
+	select LV_USE_LABEL
+	select LV_USE_IMG
 
 endif # ZMK_DISPLAY
 
