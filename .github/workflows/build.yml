@@ -2,4 +2,4 @@ on: [push, pull_request, workflow_dispatch]
 
 jobs:
   build:
-    uses: nguyendown/zmk/.github/workflows/build-user-config.yml@zephyr-3.2+shield-cmake+charlieplex+sk-fixes
+    uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@main
